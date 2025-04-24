@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthFit - Solusi Kesehatan & Kebugaran Anda</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: #2E7D32; /* Warna hijau untuk tema kesehatan */
+            color: white;
+            padding: 20px 0;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            background-color: #E8F5E9; /* Warna hijau muda untuk background */
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #1B5E20;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            color: #388E3C;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: #FF5722; /* Warna oranye untuk tombol CTA */
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: #E64A19;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 60px;
+            color: #1B5E20;
+        }
+        
+        .features-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .feature-item {
+            flex-basis: 30%;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .feature-icon {
+            font-size: 40px;
+            color: #4CAF50;
+            margin-bottom: 20px;
+        }
+        
+        .feature-item h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #2E7D32;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: #E8F5E9;
+        }
+        
+        .testimonial-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .testimonial-item {
+            flex-basis: 48%;
+            background-color: white;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+        
+        /* Profile Section */
+        .profile {
+            padding: 80px 0;
+            background-color: #FFF;
+        }
+        
+        .profile-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .profile-text {
+            flex-basis: 60%;
+        }
+        
+        .profile-image {
+            flex-basis: 35%;
+            text-align: center;
+        }
+        
+        .profile-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Services/Products Section */
+        .services {
+            padding: 80px 0;
+            background-color: #F9FBE7;
+        }
+        
+        .service-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .service-item {
+            flex-basis: 30%;
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-image {
+            height: 200px;
+            background-color: #E8F5E9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2E7D32;
+        }
+        
+        .service-price {
+            font-weight: bold;
+            color: #FF5722;
+            margin-top: 15px;
+            font-size: 18px;
+        }
+        
+        /* Blog Section */
+        .blog {
+            padding: 80px 0;
+        }
+        
+        .blog-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .blog-item {
+            flex-basis: 48%;
+            margin-bottom: 40px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background-color: #E8F5E9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-date {
+            color: #888;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .blog-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #2E7D32;
+        }
+        
+        .read-more {
+            display: inline-block;
+            color: #FF5722;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+        
+        /* Order/Packaging Section */
+        .order {
+            padding: 80px 0;
+            background-color: #E8F5E9;
+        }
+        
+        .order-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+        
+        .order-step {
+            flex-basis: 23%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .order-step:not(:last-child)::after {
+            content: "→";
+            position: absolute;
+            right: -15px;
+            top: 30px;
+            font-size: 24px;
+            color: #4CAF50;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .order-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .order-info h3 {
+            margin-bottom: 20px;
+            color: #2E7D32;
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 100px 0;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+        }
+        
+        .cta h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1B5E20;
+            color: white;
+            padding: 60px 0;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-section {
+            flex-basis: 30%;
+        }
+        
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+        
+        .social-links {
+            list-style: none;
+            display: flex;
+        }
+        
+        .social-links li {
+            margin-right: 10px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        
+        .footer-bottom {
+            margin-top: 40px;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #A5D6A7;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .features-grid, .service-grid, .blog-grid, .order-steps {
+                flex-direction: column;
+            }
+            
+            .feature-item, .service-item, .blog-item, .order-step {
+                flex-basis: 100%;
+            }
+            
+            .testimonial-grid {
+                flex-direction: column;
+            }
+            
+            .testimonial-item {
+                flex-basis: 100%;
+            }
+            
+            .footer-section {
+                flex-basis: 100%;
+                margin-bottom: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            nav {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                margin-top: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .nav-links li {
+                margin: 5px 10px;
+            }
+            
+            .profile-text, .profile-image {
+                flex-basis: 100%;
+            }
+            
+            .profile-image {
+                margin-bottom: 30px;
+                order: -1;
+            }
+            
+            .order-step:not(:last-child)::after {
+                content: "↓";
+                position: static;
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">HealthFit</div>
+                <ul class="nav-links">
+                    <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#profile">Profil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Layanan/Jasa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#blog">Blog/Artikel</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#order">Pemesanan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Beranda) -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Hidup Sehat, Hidup Bahagia</h1>
+            <p>Solusi lengkap untuk kesehatan dan kebugaran Anda dengan program yang disesuaikan kebutuhan personal.</p>
+            <a href="#" class="cta-button">Mulai Program</a>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profile" class="profile">
+        <div class="container">
+            <h2 class="section-title">Profil Saya</h2>
+            <div class="profile-content">
+                <div class="profile-text">
+                    <h3>Narendra Dirga Pratama </h3>
+                    <p>Saya bersekolah di SMK Muhammadiyah 1 yk</p>
+                    <p>Tempat, tgl. lahir : Wonogiri, 02 maret 2007</p>
+                    <p>Saya jurusan Rekayasa Perangkat Lunak</p>
+                </div>
+                <div class="profile-image">
+                    <div class="profile-image">
+                        <img src="pp2.jpg" alt="Profil HealthFit" style="width: 100%; height: 300px; object-fit: cover; border-radius: 10px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services/Products Section -->
+    <!-- Ganti bagian Services/Products Section dengan kode berikut -->
+<!-- Services/Products Section -->
+<section id="services" class="services">
+    <div class="container">
+        <h2 class="section-title">Layanan & Program</h2>
+        <div class="service-grid">
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="gym.webp" alt="Program Kebugaran Premium" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="service-content">
+                    <h3>Program Kebugaran Premium</h3>
+                    <p>Program latihan intensif 3 bulan dengan pelatih pribadi dan evaluasi mingguan untuk hasil maksimal.</p>
+                    <p class="service-price">Rp 500.000/bulan</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="konsul.jpg" alt="Paket Konsultasi Nutrisi" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="service-content">
+                    <h3>Paket Konsultasi Nutrisi</h3>
+                    <p>Konsultasi dengan ahli gizi bersertifikat dan rencana makan yang disesuaikan dengan kebutuhan Anda.</p>
+                    <p class="service-price">Rp 700.000/paket</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="yoga.avif" alt="Program Manajemen Stres" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="service-content">
+                    <h3>Program Manajemen Stres</h3>
+                    <p>Kelas meditasi, yoga, dan teknik relaksasi untuk kesehatan mental yang lebih baik.</p>
+                    <p class="service-price">Rp 500.000/bulan</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="vitaamin.jpg" alt="Suplemen Nutrisi" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="service-content">
+                    <h3>Suplemen Nutrisi</h3>
+                    <p>Suplemen kualitas premium untuk mendukung program kesehatan dan kebugaran Anda.</p>
+                    <p class="service-price"> Rp 150.000</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="apk.jpeg" alt="Aplikasi HealthFit" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="service-content">
+                    <h3>Aplikasi HealthFit</h3>
+                    <p>Akses program latihan, pelacak nutrisi, dan bimbingan ahli dari smartphone Anda.</p>
+                    <p class="service-price">Rp 20.000/bulan</p>
+                </div>
+            </div>
+            <div class="service-item">
+                <div class="service-image">
+                    <img src="konsul dok.png" alt="Konsultasi Kesehatan" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="service-content">
+                    <h3>Konsultasi Kesehatan</h3>
+                    <p>Konsultasi dengan dokter ahli untuk mengatasi masalah kesehatan spesifik.</p>
+                    <p class="service-price">Rp 250.000/sesi</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Blog/Article Section -->
+    <!-- Blog/Article Section -->
+<section id="blog" class="blog">
+    <div class="container">
+        <h2 class="section-title">Blog & Artikel</h2>
+        <div class="blog-grid">
+            <div class="blog-item">
+                <div class="blog-image">
+                    <img src="sayur.jpg" alt="Makanan Super untuk Sistem Imun" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="blog-content">
+                    <p class="blog-date">24 April 2025</p>
+                    <h3>10 Makanan Super untuk Meningkatkan Sistem Imun</h3>
+                    <p>Perkuat sistem imun Anda dengan mengonsumsi makanan-makanan super ini secara rutin. Artikel ini akan membahas manfaat dan cara mengonsumsinya.</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <div class="blog-item">
+                <div class="blog-image">
+                    <img src="yoga.avif" alt="Teknik Meditasi" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="blog-content">
+                    <p class="blog-date">20 April 2025</p>
+                    <h3>Teknik Meditasi untuk Pemula</h3>
+                    <p>Panduan langkah demi langkah untuk memulai praktik meditasi harian yang dapat mengurangi stres dan meningkatkan kesejahteraan mental.</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <div class="blog-item">
+                <div class="blog-image">
+                    <img src="Plank.gif" alt="Latihan Menurunkan Berat Badan" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="blog-content">
+                    <p class="blog-date">15 April 2025</p>
+                    <h3>5 Latihan Efektif untuk Menurunkan Berat Badan</h3>
+                    <p>Temukan latihan kardio dan kekuatan yang dapat membantu Anda membakar kalori secara maksimal dan mencapai berat badan ideal.</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+            <div class="blog-item">
+                <div class="blog-image">
+                    <img src="vitaamin.jpg" alt="Jenis-jenis Vitamin" style="width: 100%; height: 200px; object-fit: cover;">
+                </div>
+                <div class="blog-content">
+                    <p class="blog-date">10 April 2025</p>
+                    <h3>Jenis-jenis Vitamin dan Fungsinya bagi Tubuh</h3>
+                    <p>Pahami berbagai jenis vitamin, fungsinya dalam tubuh, dan sumber makanan terbaik untuk mendapatkannya secara alami.</p>
+                    <a href="#" class="read-more">Baca Selengkapnya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Order/Packaging Section -->
+    <section id="order" class="order">
+        <div class="container">
+            <h2 class="section-title">Cara Pemesanan</h2>
+            <div class="order-steps">
+                <div class="order-step">
+                    <div class="step-number">1</div>
+                    <h3>Pilih Program</h3>
+                    <p>Pilih program yang sesuai dengan kebutuhan dan tujuan kesehatan Anda.</p>
+                </div>
+                <div class="order-step">
+                    <div class="step-number">2</div>
+                    <h3>Konsultasi</h3>
+                    <p>Jadwalkan konsultasi awal dengan tim ahli kami.</p>
+                </div>
+                <div class="order-step">
+                    <div class="step-number">3</div>
+                    <h3>Pembayaran</h3>
+                    <p>Lakukan pembayaran melalui metode yang tersedia.</p>
+                </div>
+                <div class="order-step">
+                    <div class="step-number">4</div>
+                    <h3>Mulai Program</h3>
+                    <p>Mulai program Anda dengan bimbingan tim ahli kami.</p>
+                </div>
+            </div>
+            
+            <div class="order-info">
+                <h3>Informasi Pemesanan</h3>
+                <p><strong>Metode Pembayaran:</strong> Transfer Bank, QRIS, Kartu Kredit</p>
+                <p><strong>Periode Program:</strong> Minimal 1 bulan, disarankan 3 bulan untuk hasil optimal</p>
+                <p><strong>Pembelian Produk:</strong> Pengiriman ke seluruh Indonesia dengan biaya pengiriman bervariasi</p>
+                <p><strong>Garansi:</strong> 7 hari uang kembali jika tidak puas dengan layanan kami</p>
+                <p><strong>Hubungi untuk Pemesanan:</strong> 085774047477 (WhatsApp) atau email dirgap407@gmail.com</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (Program Unggulan) -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Program Unggulan</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🏋️</div>
+                    <h3>Program Kebugaran</h3>
+                    <p>Program latihan yang dirancang khusus untuk tingkatkan stamina dan kekuatan tubuh Anda.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🥗</div>
+                    <h3>Konsultasi Nutrisi</h3>
+                    <p>Panduan pola makan sehat dengan ahli gizi berpengalaman untuk mencapai berat badan ideal.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🧘</div>
+                    <h3>Manajemen Stres</h3>
+                    <p>Teknik relaksasi dan meditasi untuk mengurangi stres dan meningkatkan kesehatan mental.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Kisah Sukses Klien</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Berkat program HealthFit, saya berhasil menurunkan 15kg dalam 3 bulan dan kini merasa jauh lebih berenergi. Tim pelatih sangat membantu dan memotivasi!"</p>
+                    <p class="testimonial-author">- Rina Wijaya, 32 tahun</p>
+                </div>
+                <div class="testimonial-item">
+                    <p class="testimonial-text">"Program nutrisi dari HealthFit mengubah cara saya makan tanpa harus kelaparan. Saya sekarang bisa mengendalikan tekanan darah tinggi saya hanya dengan pola makan yang tepat."</p>
+                    <p class="testimonial-author">- Budi Santoso, 45 tahun</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <h2>Siap Untuk Hidup Lebih Sehat?</h2>
+            <p>Bergabunglah dengan ribuan orang yang telah berhasil mencapai tujuan kesehatan mereka bersama kami.</p>
+            <a href="#" class="cta-button">Konsultasi Gratis</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-section">
+                    <h3>Tentang HealthFit</h3>
+                    <p>Pusat kesehatan dan kebugaran terpercaya dengan pendekatan holistik untuk membantu Anda mencapai gaya hidup sehat yang berkelanjutan.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Kontak</h3>
+                    <div class="contact-info">
+                        <p>Email: dirgap407@gmail.com</p>
+                        <p>Telepon: 085774047477</p>
+                        <p>Alamat: Jl.Bantul km 12</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HealthFit. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
